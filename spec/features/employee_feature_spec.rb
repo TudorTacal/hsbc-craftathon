@@ -38,8 +38,8 @@ feature 'Employees' do
     click_button "Submit"
     expect(currrent_page).to eq "/projects"
     expect(page).to have_content "Craftathon: Went to MakersAcademy Craftathon"
-
-
+    click_link 'View employee'
+    expect(page).to have_link("Add project")
   end
 
   context 'user can click through to own page' do

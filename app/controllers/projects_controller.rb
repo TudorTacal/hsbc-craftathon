@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
   def new
-    # Project.find(params[:user_id])
+    @project = Project.new
   end
 
   def create
