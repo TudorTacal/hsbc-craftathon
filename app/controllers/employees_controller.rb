@@ -8,7 +8,6 @@ class EmployeesController < ApplicationController
     @user = User.all
   end
 
-
   def show
   end
 

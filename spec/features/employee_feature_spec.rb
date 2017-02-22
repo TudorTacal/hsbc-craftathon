@@ -25,7 +25,6 @@ feature 'Employees' do
     fill_in "Name" ,with: "Stuart"
     fill_in "Job description", with: "Junior Dev"
     click_button "Sign up"
-    save_and_open_page
     expect(page).to have_link("Add employee project")
   end
 end
