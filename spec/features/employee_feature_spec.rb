@@ -31,7 +31,8 @@ feature 'Employees' do
     fill_in "Name" ,with: "Stuart"
     fill_in "Job description", with: "Junior Dev"
     click_button "Sign up"
-    expect(page).to have_link("Add employee project")
+    click_link 'View employee'
+    expect(page).to have_link("Add project")
   end
 
   context 'user can click through to own page' do

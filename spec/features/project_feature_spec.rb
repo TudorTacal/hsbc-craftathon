@@ -14,11 +14,16 @@ feature "Projects" do
   end
   context "when adding a new project" do
     scenario "it saves it in the database with title and description" do
-      click_link "Add employee project"
-      fill_in "Title", with: "HSBC cratftathon"
-      fill_in "Description", with: "Cool teamwork project with HSBC"
-      click_button "Submit"
-      expect(page).to have_content "HSBC cratftathon" 
+      add_project
+      expect(page).to have_content "HSBC cratftathon"
+    end
+  end
+
+  context 'user projects visible on user page' do
+    scenario 'user clicks through to user page to view projects' do
+      click_link 'View employee'
+      expect(page).to have_content("HSBC cratftathon")
+      expect(page).to have_content("Cool teamwork project with HSBC")
     end
   end
 end
