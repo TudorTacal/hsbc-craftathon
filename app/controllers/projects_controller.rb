@@ -13,6 +13,19 @@ class ProjectsController < ApplicationController
     redirect_to projects_path
   end
 
+  def edit
+    @project = Project.find(params[:id])
+    count = @project.endorsement + 1
+    @project.update(endorsement: count)
+    redirect_to projects_path
+  end
+
+  def update
+    @project = Project.find(params[:id])
+    count = @project.update
+    @project.update(endorsement: count)
+  end
+
   def project_params
     params.require(:project).permit(:title, :description)
   end
