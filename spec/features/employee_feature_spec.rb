@@ -5,7 +5,6 @@ feature 'Employees' do
     scenario 'after sign up' do
       visit '/'
       sign_up
-      save_and_open_page
       expect(page).to have_content("Stuart")
       # expect(page).to have_content("Junior Dev")
     end
