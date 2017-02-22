@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<div class=employee-info>
+<div class="employee-info text-center">
   <%= @user.name %>
   <%= @user.job_description %>
   <%= @user.email %>
 </div>
 
-<div class="projects">
+<div class="projects text-center">
   <% @projects.each do |project| %>
     <div class='project-detail'>
-      <h3><%= @project.title %></h3>
+      <hr>
+      <h3><%= @project.title %></h3><br>
       <p><%= @project.description %></p>
     </div>
   <% end %>
