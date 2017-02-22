@@ -2,15 +2,14 @@ class EmployeesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  # GET /employees
-  # GET /employees.json
+
   def index
     @users = User.all
   end
 
   def show
     set_user
-    @projects = Project.find_by user: set_user
+    @projects = Project.all
   end
 
   def new

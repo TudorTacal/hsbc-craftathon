@@ -1,15 +1,16 @@
 class ProjectsController < ApplicationController
 
+  def index
+    @projects = Project.all
+  end
   def new
     @project = Project.new
   end
 
   def create
-    @project = Project.create(project_params)
-  end
-
-  def show
-    @projects = Project.find_by(:user_id)
+    user = current_user
+    @project = user.projects.create(project_params)
+    redirect_to projects_path
   end
 
   def project_params
