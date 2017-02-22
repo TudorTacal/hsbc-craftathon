@@ -1,18 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Employees</h1>
-
+<h1 class="text-center">Employees</h1>
     <% @users.each do |employee| %>
-    <p>
-      <%= link_to employee.name, employee_path(employee) %>
-      <%= employee.job_description  %>
-
-    </p>
-
-      <tr>
-        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', employee_path(employee), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="text-center">
+      <hr>
+      <h3><%= link_to employee.name, employee_path(employee) %><h3>
+      <h5><%= employee.job_description  %><h5>
+    </div>
     <% end %>
 
-<br>
+
+  

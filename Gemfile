@@ -8,7 +8,7 @@ end
 
 
 gem 'devise'
-
+gem 'bootstrap-sass'
 ruby '2.3.0'
 gem 'launchy'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
