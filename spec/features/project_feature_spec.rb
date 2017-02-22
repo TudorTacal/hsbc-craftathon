@@ -14,11 +14,11 @@ feature "Projects" do
   end
   context "when adding a new project" do
     scenario "it saves it in the database with title and description" do
-      click_link "Add employee project"
+      click_link "Stuart"
       fill_in "Title", with: "HSBC cratftathon"
       fill_in "Description", with: "Cool teamwork project with HSBC"
       click_button "Submit"
-      expect(page).to have_content "HSBC cratftathon" 
+      expect(page).to have_content "HSBC cratftathon"
     end
   end
 end
