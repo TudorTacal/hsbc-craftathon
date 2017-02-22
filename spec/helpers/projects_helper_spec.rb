@@ -13,3 +13,11 @@ require 'rails_helper'
 RSpec.describe ProjectsHelper, type: :helper do
   pending "add some examples to (or delete) #{__FILE__}"
 end
+
+def add_project
+  click_link "Add employee project"
+  fill_in "Title", with: "HSBC cratftathon"
+  fill_in "Description", with: "Cool teamwork project with HSBC"
+  click_button "Submit"
+  expect(page).to have_content "HSBC cratftathon"
+end

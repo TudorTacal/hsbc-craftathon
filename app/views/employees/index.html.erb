@@ -2,20 +2,17 @@
 
 <h1>Employees</h1>
 
-  <% if @users.any? %>
     <% @users.each do |employee| %>
     <p>
-      <%= employee.email %>
+      <%= link_to employee.name, employee_path(employee) %>
+      <%= employee.job_description  %>
+
     </p>
 
       <tr>
-        <td><%= link_to 'View employee', employee_path(employee) %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
         <td><%= link_to 'Destroy', employee_path(employee), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  <% else %>
-    <h3>No employees currently listed</h3>
-  <% end %>
 
 <br>
