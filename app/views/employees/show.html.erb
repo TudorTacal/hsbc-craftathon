@@ -19,5 +19,10 @@
 <br>
 
 <!-- <%= link_to 'Edit', edit_employee_path(@user) %> -->
-<%= link_to 'Add project', new_employee_project_path %>
-<%= link_to 'Back', employees_path %>
+<button type="button" class="btn btn-default center-block">
+    <%= link_to 'Back', employees_path%>
+</button>
+
+<button type="button" class="btn btn-default center-block">
+  <%= link_to 'Add project', new_employee_project_path %>
+</button>
