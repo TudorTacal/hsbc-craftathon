@@ -1,17 +1,12 @@
-<p id="notice"><%= notice %></p>
 
 
-<h1>Employees</h1>
+    <p id="notice"><%= notice %></p>
 
-    <% @users.each do |user| %>
-    <p>
-      <%= link_to user.name, employee_path(user) %>
-      <%= user.job_description  %>
-
-    </p>
-
-
+<h1 class="text-center">Employees</h1>
+    <% @users.each do |employee| %>
+    <div class="text-center">
+      <hr>
+      <h3><%= link_to employee.name, employee_path(employee) %><h3>
+      <h5><%= employee.job_description  %><h5>
+    </div>
     <% end %>
-
-
-  

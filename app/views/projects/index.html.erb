@@ -1,9 +1,12 @@
+<div class="text-center">
 <h1>Projects</h1>
 
     <% @projects.each do |project| %>
-      <%= project.title %>
+      <hr>
+      <h3><%= project.title %></h3>
       <%= project.description  %>
       <%= project.endorsement %>
       <%= link_to "Endorse", edit_project_path(project) %><br/>
 
     <% end %>
+  </div>
