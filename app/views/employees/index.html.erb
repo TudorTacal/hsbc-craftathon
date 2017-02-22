@@ -2,12 +2,16 @@
 
 <h1>Employees</h1>
 
-  <% if @employees.any? %>
-    <% @employees.each do |employee| %>
+  <% if @users.any? %>
+    <% @users.each do |employee| %>
+    <p>
+      <%= employee.email %>
+    </p>
+
       <tr>
-        <td><%= link_to 'Show', employee %></td>
+        <td><%= link_to 'View employee', employee_path(employee) %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', employee_path(employee), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   <% else %>
@@ -15,5 +19,3 @@
   <% end %>
 
 <br>
-
-<%= link_to 'Add employee project', new_employee_path %>

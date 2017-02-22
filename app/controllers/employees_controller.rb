@@ -1,16 +1,17 @@
 class EmployeesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_employee, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /employees
   # GET /employees.json
   def index
-    @employees = Employee.all
+    @users = User.all
   end
 
   # GET /employees/1
   # GET /employees/1.json
   def show
+    set_user
   end
 
   # GET /employees/new
@@ -64,8 +65,8 @@ class EmployeesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_employee
-      @employee = Employee.find(params[:id])
+    def set_user
+      @user = User.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
