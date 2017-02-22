@@ -1,4 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<div class=employee-info>
+  <%= @user.name %>
+  <%= @user.job_description %>
+  <%= @user.email %>
+</div>
+
+<div class="projects">
+  <% @projects.each do |project| %>
+    <div class='project-detail'>
+      <h3><%= @project.name %></h3>
+      <p><%= @project.description %></p>
+    </div>
+  <% end %>
+</div>
+
+<br>
+
+<!-- <%= link_to 'Edit', edit_employee_path(@user) %> -->
 <%= link_to 'Back', employees_path %>
