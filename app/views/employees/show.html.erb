@@ -3,26 +3,19 @@
 <div class="employee-info text-center">
   <%= @user.name %>
   <%= @user.job_description %>
-  <%= @user.email %>
 </div>
 
 <div class="projects text-center">
   <% @projects.each do |project| %>
     <div class='project-detail'>
-      <hr>
-      <h3><%= @project.title %></h3><br>
-      <p><%= @project.description %></p>
+      <h3><%= project.title %></h3>
+      <p><%= project.description %></p>
+
     </div>
   <% end %>
 </div>
 
 <br>
+<%= link_to 'Add project', new_employee_path %>
+<%= link_to 'Back', employee_path %>
 
-<!-- <%= link_to 'Edit', edit_employee_path(@user) %> -->
-<button type="button" class="btn btn-default center-block">
-    <%= link_to 'Back', employees_path%>
-</button>
-
-<button type="button" class="btn btn-default center-block">
-  <%= link_to 'Add project', new_employee_project_path %>
-</button>

@@ -1,0 +1,9 @@
+<h1>Projects</h1>
+
+    <% @projects.each do |project| %>
+      <%= project.title %>
+      <%= project.description  %>
+      <%= project.endorsement %>
+      <%= link_to "Endorse", edit_project_path(project) %><br/>
+
+    <% end %>

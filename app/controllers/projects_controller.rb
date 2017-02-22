@@ -1,15 +1,29 @@
 class ProjectsController < ApplicationController
 
+  def index
+    @projects = Project.all
+  end
   def new
     @project = Project.new
   end
 
   def create
-    @project = Project.create(project_params)
+    user = current_user
+    @project = user.projects.create(project_params)
+    redirect_to projects_path
   end
 
-  def show
-    @projects = Project.find_by(:user_id)
+  def edit
+    @project = Project.find(params[:id])
+    count = @project.endorsement + 1
+    @project.update(endorsement: count)
+    redirect_to projects_path
+  end
+
+  def update
+    @project = Project.find(params[:id])
+    count = @project.update
+    @project.update(endorsement: count)
   end
 
   def project_params
