@@ -2,8 +2,7 @@
 
 <h1>Employees</h1>
 
-  <% if @employees.any? %>
-    <% @employees.each do |employee| %>
+    <% @user.all  %>
       <tr>
         <td><%= link_to 'Show', employee %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
