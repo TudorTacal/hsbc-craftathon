@@ -10,6 +10,7 @@ class EmployeesController < ApplicationController
 
   def show
     set_user
+    @projects = Project.find_by user: set_user
   end
 
   def new
